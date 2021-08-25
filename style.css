@@ -8,41 +8,69 @@
   font-family: 'Roboto', sans-serif;
   background-color: var(--white);
 }
-:root{
-  --white: #F8F5FA;
-  --black: #333;
+body{
+  background: rgb(52,34,157);
+  background: linear-gradient(0deg, rgba(52,34,157,1) 0%, rgba(191,45,100,1) 32%, rgba(179,43,93,1) 71%, rgba(100,4,126,1) 100%);
 }
-
 /* --HEADER--*/
 header{
   display: flex;
-  justify-content: center;
+  height: 5vh;
+  width: 80%;
+  margin: 0 auto;
 }
 #navigation-bar{
   display: flex;
-  width: 80%;
+  width: 100%;
+  align-items: center;
   justify-content: space-between;
+}
+.logo{
+  margin-top: 2px;
+  font-size: 36px;
+  font-weight: 700;
 }
 .menu{
   display: flex;
+  margin-top: 2px;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  justify-content: space-between;
 }
-
+.menu a{
+  color: #9217ad;
+}
+.menu li{
+  display: flex;
+  border-radius: 1px;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+}
+.menu li:hover{
+  background-color: #360841;
+  transition: .5s;
+  font-size:18px ;
+}
 /*---Container--*/
 #container{
   width: 80%;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
 }
 /*--Página Inicial--*/
 #pagina-inicial{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .apresentacao-inicial{
-  width: 20%;
-  height: fit-content;
+  display: flex;
+  width: 15%;
+  justify-content: center;
 }
 .apresentacao-inicial span{
   font-size: 80px;
@@ -52,6 +80,7 @@ header{
   width: 240px;
   height: 240px;
   border-radius: 50%;
+  box-shadow: 0px 0px 20px 8px rgb(71, 17, 53);
   overflow: hidden;
 }
 .foto-inicial img{
@@ -60,12 +89,16 @@ header{
 }
 .box-btn{
   display: flex;
+  width: 15%;
   flex-direction: column;
+}
+.box-btn a{
+  color: #000;
 }
 .btn-inicial{
   display: flex;
   padding: 30px;
-  margin: 40px 0px;
+  margin: 30px 0px;
   border: 1px solid #000;
   justify-content: center;
   align-items: center;
