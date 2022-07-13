@@ -8,16 +8,31 @@
   font-family: 'Roboto', sans-serif;
   background-color: var(--white);
 }
+/* -- SCROLL BAR --*/
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-track{
+  background: #360841;
+}
+::-webkit-scrollbar-thumb{
+  background: #000;
+  border-radius: 30px;
+}
+/* --HEADER--*/
 body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: rgb(52,34,157);
   background: linear-gradient(0deg, rgba(52,34,157,1) 0%, rgba(191,45,100,1) 32%, rgba(179,43,93,1) 71%, rgba(100,4,126,1) 100%);
 }
-/* --HEADER--*/
 header{
   display: flex;
   height: 5vh;
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0;
 }
 #navigation-bar{
   display: flex;
@@ -32,7 +47,6 @@ header{
 }
 .menu{
   display: flex;
-  margin-top: 2px;
   align-items: center;
   height: 100%;
   width: 40%;
@@ -56,20 +70,18 @@ header{
 }
 /*---Container--*/
 #container{
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
   height: 100%;
 }
 /*--Página Inicial--*/
 #pagina-inicial{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 80vh;
+  justify-content: space-evenly;
+  min-height: 95vh;
 }
 .apresentacao-inicial{
   display: flex;
-  width: 15%;
   justify-content: center;
 }
 .apresentacao-inicial span{
@@ -91,6 +103,7 @@ header{
   display: flex;
   width: 15%;
   flex-direction: column;
+  
 }
 .box-btn a{
   color: #000;
@@ -130,14 +143,32 @@ header{
 /*--Tecnologias--*/
 #tecnologias{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
   min-height: 100vh;
 }
+.wakatime{
+  width: 50%;
+  height: 70%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.legends{
+  font-size: 48px;
+}
+.tecnologia-percent{
+  display: flex;
+  width: 100%;
+  height: 30%;
+}
 .tecnologias-box{
+  display: flex;
+  justify-content: center;
   border: 1px solid #000;
-  width: 33%;
-  height: 20vh;
+  margin: 5px;
+  width: 100%;
 }
 
 /*--Projetos--*/
