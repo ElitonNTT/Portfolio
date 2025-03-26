@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { GitHub, Linkedin, Instagram, Facebook, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Facebook, Mail } from 'lucide-react';
 
 const socialLinks = [
-  { icon: GitHub, href: "#", label: "GitHub" },
+  { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Facebook, href: "#", label: "Facebook" },
