@@ -45,9 +45,7 @@ const HeroSection = () => {
           ></div>
 
           <div className="relative w-80 h-80 md:w-96 md:h-96 animate-float m-4">
-            {/* Moldura Animada */}
             <div className="absolute inset-0 w-full h-full animate-blob rounded-[45%] bg-white shadow-xl overflow-hidden">
-              {/* Imagem Dentro da Moldura */}
               <img
                 src="https://inscricao.faculdadefama.edu.br/api/uploads/2025-03-26/BANNER-662.jpeg"
                 alt="Profile"
