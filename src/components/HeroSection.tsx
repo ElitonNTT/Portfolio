@@ -36,20 +36,22 @@ const HeroSection = () => {
         <div className="relative flex justify-center items-center">
           <div className="absolute w-[110%] h-[110%] bg-pastel-peach/50 rounded-full animate-blob blur-xl opacity-70"></div>
           <div
-            className="absolute w-[110%] h-[110%] bg-pastel-blue/50 rounded-full animate-blob blur-xl opacity-70"
+            className="absolute w-[120%] h-[120%] bg-pastel-blue/50 rounded-full animate-blob blur-xl opacity-70"
             style={{ animationDelay: "2s" }}
           ></div>
           <div
-            className="absolute w-[110%] h-[110%] bg-pastel-green/50 rounded-full animate-blob blur-xl opacity-70"
+            className="absolute w-[120%] h-[120%] bg-pastel-green/50 rounded-full animate-blob blur-xl opacity-70"
             style={{ animationDelay: "4s" }}
           ></div>
 
-          <div className="relative w-80 h-80 md:w-96 md:h-96 overflow-hidden animate-float fancy-border">
-            <div className="w-full h-full animate-blob bg-white shadow-xl">
+          <div className="relative w-80 h-80 md:w-96 md:h-96 animate-float m-4">
+            {/* Moldura Animada */}
+            <div className="absolute inset-0 w-full h-full animate-blob rounded-[45%] bg-white shadow-xl overflow-hidden">
+              {/* Imagem Dentro da Moldura */}
               <img
-                src="src\assets\images\profile.jpeg"
+                src="https://inscricao.faculdadefama.edu.br/api/uploads/2025-03-26/BANNER-662.jpeg"
                 alt="Profile"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover animate-blob"
               />
             </div>
           </div>
