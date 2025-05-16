@@ -19,8 +19,11 @@ const HeroSection = () => {
             Transformando ideias em experiências digitais
           </h1>
           <p className="text-lg text-muted-foreground max-w-lg">
-            Sou um desenvolvedor fullstack apaixonado por criar soluções web
-            inovadoras e com excelente experiência de usuário.
+            Eliton Netto, desenvolvedor fullstack com experiência em projetos
+            desafiadores. Prezo por código limpo, arquitetura escalável e,
+            principalmente, soluções que resolvam problemas reais – sem
+            complicações desnecessárias. Gosto de trabalhar com times que
+            valorizam eficiência e qualidade.
           </p>
           <div className="pt-4">
             <a

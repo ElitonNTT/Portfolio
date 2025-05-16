@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -20,17 +21,58 @@ const ContactSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const lastSent = localStorage.getItem("lastEmailSent");
+    const now = Date.now();
+    const cooldown = 10 * 60 * 1000;
+
+    if (lastSent && now - parseInt(lastSent) < cooldown) {
+      const remaining = Math.ceil(
+        (cooldown - (now - parseInt(lastSent))) / 1000
+      );
+      toast.error(
+        `Por favor, aguarde ${remaining} segundos antes de tentar novamente.`
+      );
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form data submitted:", formData);
+    try {
+      const token = await window.grecaptcha.execute(
+        "6LcExDwrAAAAAGrbF6aM0nC_LY7C0zN8eI4tytGX",
+        {
+          action: "submit",
+        }
+      );
+
+      if (!token) {
+        throw new Error("Erro ao validar reCAPTCHA.");
+      }
+
+      const result = await emailjs.send(
+        import.meta.env.VITE_SERVICE_EMAIL_KEY,
+        import.meta.env.VITE_TEMPLATE_EMAIL_KEY,
+        {
+          name: formData.name,
+          email: formData.email,
+          time: new Date().getDate(),
+          message: formData.message,
+        },
+        import.meta.env.VITE_SECRET_EMAIL_KEY
+      );
+
+      console.log("Email enviado:", result.text);
       toast.success("Mensagem enviada com sucesso!");
       setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      toast.error("Ocorreu um erro ao enviar a mensagem.");
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
