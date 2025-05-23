@@ -39,6 +39,7 @@ jobs:
           echo "VITE_SERVICE_EMAIL_KEY=${{ secrets.VITE_SERVICE_EMAIL_KEY }}" >> $GITHUB_ENV
           echo "VITE_TEMPLATE_EMAIL_KEY=${{ secrets.VITE_TEMPLATE_EMAIL_KEY }}" >> $GITHUB_ENV
           echo "VITE_SECRET_EMAIL_KEY=${{ secrets.VITE_SECRET_EMAIL_KEY }}" >> $GITHUB_ENV
+          echo "VITE_PUBLIC_EMAIL_KEY=${{ secrets.VITE_PUBLIC_EMAIL_KEY }}" >> $GITHUB_ENV
       
       - name: Build
         run: yarn build
