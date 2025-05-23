@@ -52,6 +52,10 @@ const ContactSection = () => {
         throw new Error("Erro ao validar reCAPTCHA.");
       }
 
+      emailjs.init({
+        publicKey: import.meta.env.VITE_PUBLIC_EMAIL_KEY,
+      });
+
       const result = await emailjs.send(
         import.meta.env.VITE_SERVICE_EMAIL_KEY,
         import.meta.env.VITE_TEMPLATE_EMAIL_KEY,
