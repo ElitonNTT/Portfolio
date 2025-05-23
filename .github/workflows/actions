@@ -26,9 +26,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      import.meta.env.VITE_SERVICE_EMAIL_KEY: ${{ secrets.VITE_SECRET_EMAIL_KEY }}
-      import.meta.env.VITE_TEMPLATE_EMAIL_KEY: ${{ secrets.VITE_SERVICE_EMAIL_KEY }}
-      import.meta.env.VITE_SECRET_EMAIL_KEY: ${{ secrets.VITE_TEMPLATE_EMAIL_KEY }}
+      import.meta.env.VITE_SERVICE_EMAIL_KEY: ${{ secrets.VITE_SERVICE_EMAIL_KEY }}
+      import.meta.env.VITE_TEMPLATE_EMAIL_KEY: ${{ secrets.VITE_TEMPLATE_EMAIL_KEY }}
+      import.meta.env.VITE_SECRET_EMAIL_KEY: ${{ secrets.VITE_SECRET_EMAIL_KEY }}
+      import.meta.env.VITE_PUBLIC_EMAIL_KEY: ${{ secrets.VITE_PUBLIC_EMAIL_KEY }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
